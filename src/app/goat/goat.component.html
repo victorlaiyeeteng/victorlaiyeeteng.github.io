@@ -1,0 +1,28 @@
+<div class="wrapper">
+    <div class="background"></div>
+    <div class="column-one">
+        <h1>who's the goat?</h1>
+        <div class="goatbuttons">
+            <button (click)="answer(false)">michael jordan</button>
+            <button (click)="answer(true)">lebron james</button>
+            <button (click)="answer(false)">kobe bryant</button>
+        </div>
+        <div class="answer">
+            <div class="fade-in" 
+            [style.opacity]="currentResponse === 'wrong' ? '1' : '0'"
+            [style.visibility]="currentResponse === 'wrong' ? 'visible' : 'hidden'"
+            style="transition: opacity 0.5s, visibility 0.5s" style="color: red; position: absolute; left: 20%;">
+                <p>so sorry, but it's <a href="https://youtu.be/Pjm66WVbdp0?t=12" target="_blank" style="color: rgb(255, 98, 98); text-decoration: none;">lebron james</a></p>
+                <img src="../../assets/images/lebron.jpeg">
+            </div>
+            <div class="fade-in" 
+            [style.opacity]="currentResponse === 'correct' ? '1' : '0'"
+            [style.visibility]="currentResponse === 'correct' ? 'visible' : 'hidden'"
+            style="transition: opacity 0.5s, visibility 0.5s" style="color: green; position: absolute; left: 20%;">
+                <p>congrats, you're right! it's <a href="https://youtu.be/Pjm66WVbdp0?t=12" target="_blank" style="color: rgb(106, 203, 106); text-decoration: none;">lebron jamesss</a></p>
+                <img src="../../assets/images/lebron.jpeg">
+            </div>
+        </div>
+
+    </div>
+</div>
