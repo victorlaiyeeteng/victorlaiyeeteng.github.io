@@ -1,3 +1,3 @@
-# 🌊 personal website
+# my personal website
 #### built with angular
  
