@@ -1,3 +1,3 @@
 # my personal website
-#### built with angular
+built with angular
  
