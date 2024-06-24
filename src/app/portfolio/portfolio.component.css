@@ -20,7 +20,6 @@
   }
   
   .entry {
-    color: #dddddd;
     align-items: left;
     justify-content: left;
     text-align: left;
@@ -45,7 +44,6 @@
 
   p {
     font-size: 0.88em;
-    color: #dddddd;
     align-items: left;
     justify-content: left;
     text-align: left;
