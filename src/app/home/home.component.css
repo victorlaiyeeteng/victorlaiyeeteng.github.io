@@ -2,12 +2,18 @@
   position: absolute;
   width: 90%;
   height: 100vh;
-  background-image: url("../../assets/images/image.png");
   background-size: 40vh auto;
   animation: shake-lr 17s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite both;
   background-repeat: no-repeat;
   background-position: 90% 30%;
+}
 
+.light-mode-bg {
+  background-image: url("../../assets/images/image_light_mode.png");
+}
+
+.dark-mode-bg {
+  background-image: url("../../assets/images/image.png");
 }
 
 .cursor {
@@ -207,15 +213,12 @@ p {
 }
 
 a:link {
-  color: #6b96c3;
   font-weight: 700;
   text-decoration: none;
   transition: 0.4s ease-in-out;
 }
 
-a:visited {
-  color: #6b96c3;
-}
+
 
 a:hover {
   color: hotpink;

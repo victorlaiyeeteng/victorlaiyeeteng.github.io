@@ -24,12 +24,8 @@ p {
 
 }
 
-a{
-  color: #dddddd;
-}
 
 .email-a{
-  text-decoration-color: #dddddd;
   text-decoration-line: underline;
 }
 
@@ -38,7 +34,6 @@ a{
 }
 .email{
   text-decoration: none;
-  color: #dddddd;
 }
 
 .email {

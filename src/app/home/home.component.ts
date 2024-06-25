@@ -1,4 +1,5 @@
 import { Component, ElementRef, ViewChild ,Renderer2 } from '@angular/core';
+import { ThemeService } from '../theme.service';
 
 @Component({
   selector: 'app-home',
@@ -7,18 +8,39 @@ import { Component, ElementRef, ViewChild ,Renderer2 } from '@angular/core';
 })
 
 export class HomeComponent {
+
+  constructor(private renderer: Renderer2, private themeService: ThemeService) {
+    this.themeService.themeChanged.subscribe(isDarkMode => {
+      this.updateBackgroundImage(isDarkMode);
+    });  }
+
+  
   @ViewChild('wordElement') wordElement: ElementRef = {} as ElementRef;
   @ViewChild('cursorElement') cursorElement: ElementRef = {} as ElementRef;
-
+  @ViewChild('parallaxElement') parallaxElement: ElementRef = {} as ElementRef;
+  
+  
   private words = ["hello", "你好", "hola"];
   private currentWord = 0;
   private currentChar = 0;
   private isDeleting = false;
   private delay = 200;
-
+  
   ngAfterViewInit() {
     this.type();
+    this.updateBackgroundImage(this.themeService.isDarkMode);
   }
+  
+  private updateBackgroundImage(isDarkMode: boolean): void {
+    if (isDarkMode) {
+      this.renderer.removeClass(this.parallaxElement.nativeElement, 'light-mode-bg');
+      this.renderer.addClass(this.parallaxElement.nativeElement, 'dark-mode-bg');
+    } else {
+      this.renderer.removeClass(this.parallaxElement.nativeElement, 'dark-mode-bg');
+      this.renderer.addClass(this.parallaxElement.nativeElement, 'light-mode-bg');
+    }
+  }
+
 
   private type() {
     let fullWord = this.words[this.currentWord];
