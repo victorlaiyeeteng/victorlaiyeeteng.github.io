@@ -9,26 +9,30 @@ import { ThemeService } from './theme.service';
 export class AppComponent  {
   title = 'portfolio-website';
 
-  private isDarkMode = true;
+  // private isDarkMode = true;
 
   constructor(private renderer: Renderer2, private themeService: ThemeService) {
-    this.updateTheme();
+    // this.updateTheme();
+    this.themeService.themeChanged.subscribe(isDarkMode => {
+      this.updateTheme(isDarkMode);
+    });
+    this.updateTheme(this.themeService.isDarkMode);
   }
 
   toggleTheme(): void {
-    this.isDarkMode = !this.isDarkMode;
-    this.updateTheme();
+    const isDarkMode = !this.themeService.isDarkMode;
+    this.themeService.setTheme(isDarkMode);
   }
 
-  private updateTheme(): void {
-    if (this.isDarkMode) {
+  private updateTheme(isDarkMode: boolean): void {
+    if (isDarkMode) {
       this.renderer.removeClass(document.body, 'light-mode');
       this.renderer.addClass(document.body, 'dark-mode');
     } else {
       this.renderer.removeClass(document.body, 'dark-mode');
       this.renderer.addClass(document.body, 'light-mode');
     }
-    this.themeService.setTheme(this.isDarkMode);
+    this.themeService.setTheme(isDarkMode);
   }
 }
 

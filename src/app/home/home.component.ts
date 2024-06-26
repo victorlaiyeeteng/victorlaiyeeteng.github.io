@@ -12,7 +12,8 @@ export class HomeComponent {
   constructor(private renderer: Renderer2, private themeService: ThemeService) {
     this.themeService.themeChanged.subscribe(isDarkMode => {
       this.updateBackgroundImage(isDarkMode);
-    });  }
+    });  
+  }
 
   
   @ViewChild('wordElement') wordElement: ElementRef = {} as ElementRef;

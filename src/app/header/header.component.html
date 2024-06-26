@@ -1,13 +1,15 @@
 <div class="header wrapper">
     <div class="background"></div>
     <nav>
-        <ul>
+        <ul class="left-nav">
+            <li> <a routerLink="goat" routerLinkActive="active" style="font-size:x-small;">🐐</a> </li>
+        </ul>
+        <ul class="right-nav">
             <li> <a routerLink="" routerLinkActive="active">home</a> </li>
             <li> <a routerLink="portfolio" routerLinkActive="active">portfolio</a> </li>
             <li> <a routerLink="film" routerLinkActive="active">film</a> </li>
             <li> <a routerLink="contact" routerLinkActive="active">contact</a> </li>
-            <li> <a routerLink="goat" routerLinkActive="active" style="font-size:x-small;">🐐</a> </li>
-            <!-- <li> <a><img src="../../assets/images/theme-button.svg" style="height: 0.7em;"></a></li> -->
+            <li> <a (click)="onToggleTheme()"><img #themeButton class="theme-button" src="../../assets/images/theme-button-light.png"></a></li>
         </ul>
     </nav>
     <hr class="hr-animate">
