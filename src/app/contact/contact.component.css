@@ -40,3 +40,12 @@ p {
   font-size: 3.5vw;
 }
 
+@media (max-width:480px) {
+  p {
+    font-size: 1em;
+  }
+  
+  .email {
+    font-size: 5vw;
+  }
+}
